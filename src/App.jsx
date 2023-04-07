@@ -14,6 +14,7 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
+    onSaveButtonClick: '',
   };
 
   onInputChange = (event) => {
@@ -54,8 +55,9 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
-          onSaveButtonClick={ onSaveButtonClick }
           onInputChange={ this.onInputChange }
+          onSaveButtonClick={ onSaveButtonClick }
+
         />
         <Card
           cardName={ cardName }
@@ -66,6 +68,10 @@ class App extends React.Component {
           cardImage={ cardImage }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+          hasTrunfo={ hasTrunfo }
+          isSaveButtonDisabled={ isSaveButtonDisabled }
+          onInputChange={ this.onInputChange }
+          onSaveButtonClick={ onSaveButtonClick }
         />
       </div>
     );
