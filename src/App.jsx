@@ -19,11 +19,17 @@ class App extends React.Component {
 
   onInputChange = (event) => {
     const { target } = event;
-    const { value, cardName } = target;
+    const { value, name, checked } = target;
 
-    this.setState({
-      [cardName]: value,
-    });
+    if (name === 'cardTrunfo') {
+      this.setState({
+        [name]: checked,
+      });
+    } else {
+      this.setState({
+        [name]: value,
+      });
+    }
   };
 
   render() {
