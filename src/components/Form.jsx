@@ -24,6 +24,7 @@ class Form extends React.Component {
       <form>
         <label htmlFor="name-input">Nome:</label>
         <input
+          name="cardName"
           type="text"
           id="name-input"
           data-testid="name-input"
@@ -33,6 +34,7 @@ class Form extends React.Component {
 
         <label htmlFor="description-input">Descrição:</label>
         <textarea
+          name="cardDescription"
           id="description-input"
           data-testid="description-input"
           value={ cardDescription }
@@ -41,6 +43,7 @@ class Form extends React.Component {
 
         <label htmlFor="attr1-input">Atributo 1:</label>
         <input
+          name="cardAttr1"
           type="number"
           id="attr1-input"
           data-testid="attr1-input"
@@ -50,6 +53,7 @@ class Form extends React.Component {
 
         <label htmlFor="attr2-input">Atributo 2:</label>
         <input
+          name="cardAttr2"
           type="number"
           id="attr2-input"
           data-testid="attr2-input"
@@ -59,6 +63,7 @@ class Form extends React.Component {
 
         <label htmlFor="attr3-input">Atributo 3:</label>
         <input
+          name="cardAttr3"
           type="number"
           id="attr3-input"
           data-testid="attr3-input"
@@ -68,6 +73,7 @@ class Form extends React.Component {
 
         <label htmlFor="image-input">Imagem:</label>
         <input
+          name="cardImage"
           type="text"
           id="image-input"
           data-testid="image-input"
@@ -77,6 +83,7 @@ class Form extends React.Component {
 
         <label htmlFor="rare-input">Raridade:</label>
         <select
+          name="cardRare"
           id="rare-input"
           data-testid="rare-input"
           value={ cardRare }
@@ -89,6 +96,7 @@ class Form extends React.Component {
 
         <label htmlFor="trunfo-input">Super Trunfo:</label>
         <input
+          name="cardTrunfo"
           type="checkbox"
           id="trunfo-input"
           data-testid="trunfo-input"
@@ -97,6 +105,7 @@ class Form extends React.Component {
         />
 
         <button
+          name=""
           type="submit"
           data-testid="save-button"
           disabled={ isSaveButtonDisabled }
