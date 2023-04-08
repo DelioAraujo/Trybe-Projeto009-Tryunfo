@@ -30,17 +30,20 @@ class App extends React.Component {
     const minimo = 0;
     const maximo = 90;
     const maximo2 = 210;
+    const numerocardAttr1 = Number(cardAttr1);
+    const numerocardAttr2 = Number(cardAttr2);
+    const numerocardAttr3 = Number(cardAttr3);
     if (
       cardName !== ''
       && cardImage !== ''
       && cardDescription !== ''
-      && cardAttr1 > minimo
-      && cardAttr1 < maximo
-      && cardAttr2 > minimo
-      && cardAttr2 < maximo
-      && cardAttr3 > minimo
-      && cardAttr3 < maximo
-      && (cardAttr1 + cardAttr2 + cardAttr3) < maximo2
+      && numerocardAttr1 > minimo
+      && numerocardAttr1 < maximo
+      && numerocardAttr2 > minimo
+      && numerocardAttr2 < maximo
+      && numerocardAttr3 > minimo
+      && numerocardAttr3 < maximo
+      && (numerocardAttr1 + numerocardAttr2 + numerocardAttr3) < maximo2
     ) {
       this.setState({
         isSaveButtonDisabled: false,
@@ -55,14 +58,12 @@ class App extends React.Component {
     if (name === 'cardTrunfo') {
       this.setState({
         [name]: checked,
-      });
+      }, this.validacaoBotao);
     } else {
       this.setState({
         [name]: value,
-      });
+      }, this.validacaoBotao);
     }
-
-    this.validacaoBotao();
   };
 
   render() {
