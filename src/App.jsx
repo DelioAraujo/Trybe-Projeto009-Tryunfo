@@ -130,6 +130,7 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       onSaveButtonClick,
+      arrayDeCartas,
     } = this.state;
 
     return (
@@ -164,6 +165,24 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ onSaveButtonClick }
         />
+        <h1>Todas as cartas</h1>
+        {
+          arrayDeCartas.map((item, index) => (
+            <Card
+              key={ index }
+              cardName={ item.cardName }
+              cardDescription={ item.cardDescription }
+              cardAttr1={ item.cardAttr1 }
+              cardAttr2={ item.cardAttr2 }
+              cardAttr3={ item.cardAttr3 }
+              cardImage={ item.cardImage }
+              cardRare={ item.cardRare }
+              cardTrunfo={ item.cardTrunfo }
+              hasTrunfo={ item.hasTrunfo }
+            />
+          ))
+        }
+        ;
       </div>
     );
   }
