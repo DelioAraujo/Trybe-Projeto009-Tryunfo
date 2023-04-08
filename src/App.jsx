@@ -25,6 +25,7 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardImage,
+      cardRare,
     } = this.state;
 
     const minimo = 0;
@@ -36,14 +37,15 @@ class App extends React.Component {
     if (
       cardName !== ''
       && cardImage !== ''
+      && cardRare !== ''
       && cardDescription !== ''
-      && numerocardAttr1 > minimo
-      && numerocardAttr1 < maximo
-      && numerocardAttr2 > minimo
-      && numerocardAttr2 < maximo
-      && numerocardAttr3 > minimo
-      && numerocardAttr3 < maximo
-      && (numerocardAttr1 + numerocardAttr2 + numerocardAttr3) < maximo2
+      && numerocardAttr1 >= minimo
+      && numerocardAttr1 <= maximo
+      && numerocardAttr2 >= minimo
+      && numerocardAttr2 <= maximo
+      && numerocardAttr3 >= minimo
+      && numerocardAttr3 <= maximo
+      && (numerocardAttr1 + numerocardAttr2 + numerocardAttr3) <= maximo2
     ) {
       this.setState({
         isSaveButtonDisabled: false,
