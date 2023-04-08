@@ -17,6 +17,37 @@ class App extends React.Component {
     onSaveButtonClick: '',
   };
 
+  validacaoBotao = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+    } = this.state;
+
+    const minimo = 0;
+    const maximo = 90;
+    const maximo2 = 210;
+    if (
+      cardName !== ''
+      && cardImage !== ''
+      && cardDescription !== ''
+      && cardAttr1 > minimo
+      && cardAttr1 < maximo
+      && cardAttr2 > minimo
+      && cardAttr2 < maximo
+      && cardAttr3 > minimo
+      && cardAttr3 < maximo
+      && (cardAttr1 + cardAttr2 + cardAttr3) < maximo2
+    ) {
+      this.setState({
+        isSaveButtonDisabled: false,
+      });
+    }
+  };
+
   onInputChange = (event) => {
     const { target } = event;
     const { value, name, checked } = target;
@@ -30,6 +61,8 @@ class App extends React.Component {
         [name]: value,
       });
     }
+
+    this.validacaoBotao();
   };
 
   render() {
