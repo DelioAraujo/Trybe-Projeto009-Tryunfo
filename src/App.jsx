@@ -18,14 +18,6 @@ class App extends React.Component {
     arrayDeCartas: [],
   };
 
-  validacaoSuperTrunfo = () => {
-    const {hasTrunfo, arrayDeCartas} = this.state;
-
-
-
-
-  };
-
   validacaoBotao = () => {
     const {
       cardName,
@@ -92,7 +84,7 @@ class App extends React.Component {
       hasTrunfo,
     };
 
-    if(cardTrunfo) {
+    if (cardTrunfo) {
       this.setState({
         hasTrunfo: true,
       });
