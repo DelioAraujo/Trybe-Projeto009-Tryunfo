@@ -29,29 +29,31 @@ class App extends React.Component {
       cardRare,
     } = this.state;
 
-    const minimo = 0;
-    const maximo = 90;
-    const maximo2 = 210;
-    const numerocardAttr1 = Number(cardAttr1);
-    const numerocardAttr2 = Number(cardAttr2);
-    const numerocardAttr3 = Number(cardAttr3);
-    if (
-      cardName !== ''
-      && cardImage !== ''
-      && cardRare !== ''
-      && cardDescription !== ''
-      && numerocardAttr1 >= minimo
-      && numerocardAttr1 <= maximo
-      && numerocardAttr2 >= minimo
-      && numerocardAttr2 <= maximo
-      && numerocardAttr3 >= minimo
-      && numerocardAttr3 <= maximo
-      && (numerocardAttr1 + numerocardAttr2 + numerocardAttr3) <= maximo2
-    ) {
-      this.setState({
-        isSaveButtonDisabled: false,
-      });
-    }
+    const MIN_VAL = 0;
+    const MAX_VAL = 90;
+    const MAX_TOTAL = 210;
+    const isNameValid = cardName.trim().length > 0;
+    const isImageValid = cardImage.trim().length > 0;
+    const isRareValid = cardRare.trim().length > 0;
+    const isDescriptionValid = cardDescription.trim().length > 0;
+    const isAttr1Valid = Number(cardAttr1) >= MIN_VAL && Number(cardAttr1) <= MAX_VAL;
+    const isAttr2Valid = Number(cardAttr2) >= MIN_VAL && Number(cardAttr2) <= MAX_VAL;
+    const isAttr3Valid = Number(cardAttr3) >= MIN_VAL && Number(cardAttr3) <= MAX_VAL;
+    const isTotalValid = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3)
+    <= MAX_TOTAL;
+
+    this.setState({
+      isSaveButtonDisabled: !(
+        isNameValid
+        && isImageValid
+        && isRareValid
+        && isDescriptionValid
+        && isAttr1Valid
+        && isAttr2Valid
+        && isAttr3Valid
+        && isTotalValid
+      ),
+    });
   };
 
   onSaveButtonClick = (event) => {
