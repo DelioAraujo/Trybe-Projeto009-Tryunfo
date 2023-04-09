@@ -20,7 +20,7 @@ class App extends React.Component {
 
   botaoRemover = (index) => {
     // array de cartas
-    const { arrayDeCartas } = this.status;
+    const { arrayDeCartas } = this.state;
     // carta a ser removida (usa o index vindo do map)
     const cartaRemover = arrayDeCartas[index];
     // se a carta tiver cardTrunfo como verdadeiro, muda o status hasTrunfo para falso antes de remover a carta
