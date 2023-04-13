@@ -19,21 +19,15 @@ class App extends React.Component {
   };
 
   botaoRemover = (index) => {
-    // array de cartas
     const { arrayDeCartas } = this.state;
-    // carta a ser removida (usa o index vindo do map)
     const cartaRemover = arrayDeCartas[index];
-    // se a carta tiver cardTrunfo como verdadeiro, muda o status hasTrunfo para falso antes de remover a carta
     if (cartaRemover.cardTrunfo) {
       this.setState({
         hasTrunfo: false,
       });
     }
-    // faço uma cópia do array original
     const novoArray = [...arrayDeCartas];
-    // removo o objeto que tem o index correspondente
     novoArray.splice(index, 1);
-    // coloco o novo array como sendo o array atual
     this.setState({
       arrayDeCartas: novoArray,
     });
@@ -204,7 +198,6 @@ class App extends React.Component {
               />
               <button
                 data-testid="delete-button"
-                // na propriedade onclick, coloco a função que usa o index como parâmetro para remover a carta do array
                 onClick={ () => this.botaoRemover(index) }
               >
                 Excluir
